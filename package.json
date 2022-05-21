@@ -1,0 +1,20 @@
+{
+  "name": "sc-collectionjs",
+  "version": "0.0.5",
+  "description": "",
+  "main": "Collection.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canavci2016/collectionjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^10.0.0"
+  }
+}
