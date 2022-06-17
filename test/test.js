@@ -1,5 +1,5 @@
 var assert = require('assert');
-const Collection = require("../index");
+const Collection = require("../src/index");
 var expect = require('expect.js');
 
 
@@ -25,6 +25,8 @@ describe('hooks', function () {
 
 const rawArray = [133, 2, 4, 5, 2, 23, 42];
 const collection = new Collection(rawArray);
+const rawObj = {name: "can", lastName: "avci", surname: "avci"};
+const collectionObj = new Collection(rawObj);
 
 
 describe('ArrayCollection', function () {
@@ -179,6 +181,137 @@ describe('ArrayCollection', function () {
     it('slice the array by given values', function () {
       const collection = new Collection([133, 2, 4, 5, 2, 23, 47]);
       expect(collection.chunk(2).length()).to.eql(4);
+    });
+
+  });
+
+
+});
+
+describe('ObjectCollection', function () {
+
+  describe('#sum()', function () {
+    it('the sum of values in the array', function () {
+
+    });
+  });
+
+  describe('#max()', function () {
+    it('max value in the array', function () {
+    });
+  });
+
+  describe('#min()', function () {
+    it('min value in the array', function () {
+    });
+  });
+
+  describe('#avg()', function () {
+    it('avg value in the array', function () {
+    });
+  });
+
+  describe('#random()', function () {
+    it('random value from the array', function () {
+    });
+  });
+
+  describe('#toJson()', function () {
+    it('cast to json an array', function () {
+      assert.equal(collectionObj.toJson(), JSON.stringify(rawObj));
+    });
+  });
+
+  describe('#isEmpty()', function () {
+    it('checks if array is empty', function () {
+      expect(collectionObj.isEmpty()).to.be.a('boolean');
+    });
+    it('checks if the result is false ', function () {
+      expect(collectionObj.isEmpty()).to.be(false);
+    });
+  });
+
+  describe('#isNotEmpty()', function () {
+    it('checks if array is not empty', function () {
+      expect(collectionObj.isNotEmpty()).to.be.a('boolean');
+    });
+    it('checks if the result is false ', function () {
+      expect(collectionObj.isNotEmpty()).to.be(true);
+    });
+  });
+
+
+  describe('#sort()', function () {
+    it('sort array', function () {
+    });
+
+  });
+
+
+  describe('#items()', function () {
+
+    it('return the array itself', function () {
+      expect(collectionObj.items()).to.eql(rawObj);
+    });
+
+  });
+
+  describe('#sort()', function () {
+
+    it('array asc', function () {
+
+    });
+
+    it('array desc', function () {
+
+    });
+
+
+  });
+
+  describe('#unique()', function () {
+
+    it('unique values', function () {
+    });
+
+  });
+
+  describe('#push()', function () {
+
+    it('add values into the array', function () {
+
+    });
+
+  });
+
+  describe('#first()', function () {
+    it('first value that meet the condition passed in the callback', function () {
+
+    });
+  });
+
+  describe('#only()', function () {
+    it('retrive the values by given keys', function () {
+    });
+  });
+
+  describe('#iterate through()', function () {
+    it('retrive the values by given keys', function () {
+
+    });
+  });
+
+  describe('#where()', function () {
+    it('retrive the values by given where condition', function () {
+
+    });
+  });
+
+
+  describe('#chunk()', function () {
+
+    it('slice the array by given values', function () {
+
     });
 
   });
