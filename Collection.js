@@ -1,17 +1,12 @@
 const ArrayCollection = require("./ArrayCollection");
 const ObjectCollection = require("./ObjectCollection");
-const File = require("./Collections/File");
-const FileCollection = require("./Collections/FileCollection");
-
 
 class Collection {
 
   constructor(collection) {
     this.collection = collection;
 
-    if (collection instanceof File)
-      this.collectionInstance = new FileCollection(this.collection);
-    else if (Array.isArray(this.collection))
+    if (Array.isArray(this.collection))
       this.collectionInstance = new ArrayCollection(this.collection);
     else if (typeof this.collection === 'object' && this.collection !== null)
       this.collectionInstance = new ObjectCollection(this.collection);
